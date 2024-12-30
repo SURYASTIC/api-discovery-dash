@@ -1,6 +1,7 @@
 import React from 'react';
-import { Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { Clock, CheckCircle, AlertCircle, ListTodo } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 export const TaskSection = () => {
   return (
@@ -12,7 +13,7 @@ export const TaskSection = () => {
             Task Overview
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-2">
+        <CardContent className="space-y-4">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-green-500" />
@@ -27,6 +28,10 @@ export const TaskSection = () => {
             </div>
             <span className="font-medium">5</span>
           </div>
+          <Button className="w-full" variant="outline" size="sm">
+            <ListTodo className="mr-2 h-4 w-4" />
+            View Tasks
+          </Button>
         </CardContent>
       </Card>
     </div>
