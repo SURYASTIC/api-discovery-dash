@@ -42,3 +42,7 @@
 .active-nav-link {
   @apply text-blue-600 font-medium;
 }
+
+body {
+  @apply bg-gray-50;
+}

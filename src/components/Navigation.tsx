@@ -17,21 +17,29 @@ export const Navigation = () => {
   const location = useLocation();
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-[#FEF7CD] to-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex space-x-4 overflow-x-auto">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={cn(
-                'nav-link whitespace-nowrap',
-                location.pathname === item.path && 'active-nav-link'
-              )}
-            >
-              {item.label}
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center space-x-2">
+              <span className="text-2xl font-bold text-blue-900">BPM</span>
+              <span className="text-xl text-gray-700">Portal</span>
             </Link>
-          ))}
+          </div>
+          <div className="flex space-x-4 overflow-x-auto">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={cn(
+                  'nav-link whitespace-nowrap hover:bg-blue-50 rounded-md',
+                  location.pathname === item.path && 'active-nav-link bg-blue-50'
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
